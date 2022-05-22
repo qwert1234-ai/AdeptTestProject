@@ -6,19 +6,24 @@ class CanculatorViewModel {
     private var currentSecondString: String = ""
 
     fun add(): Int {
+        checkParameters()
+
         return currentFirstString.toInt() + currentSecondString.toInt()
     }
 
     fun minus(): Int {
+        checkParameters()
         return currentFirstString.toInt() - currentSecondString.toInt()
 
     }
 
     fun multiply(): Int {
+        checkParameters()
         return currentFirstString.toInt() * currentSecondString.toInt()
     }
 
     fun divide(): Int {
+        checkParameters()
         val second = currentSecondString.toInt()
         if (second != 0) {
             return currentFirstString.toInt() / currentSecondString.toInt()
@@ -34,6 +39,12 @@ class CanculatorViewModel {
     fun updateSecond(secondNumber: String) {
         currentSecondString = secondNumber
 
+    }
+
+    fun checkParameters() {
+        if (currentFirstString == "" || currentSecondString == "") {
+            throw Exception("Один из операторов пустой")
+        }
     }
 
     }

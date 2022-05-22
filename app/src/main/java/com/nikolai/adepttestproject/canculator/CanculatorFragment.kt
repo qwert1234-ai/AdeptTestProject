@@ -30,20 +30,32 @@ class CanculatorFragment: Fragment() {
 
         val buttonAdd = view.findViewById<Button>(R.id.buttonAdd)
         buttonAdd.setOnClickListener {
-            val b = viewModel.add()
-            view.findViewById<TextView>(R.id.textView2).text = b.toString()
+            try {
+                val b = viewModel.add()
+                view.findViewById<TextView>(R.id.textView2).text = b.toString()
+            }catch(error: Exception) {
+                view.findViewById<TextView>(R.id.textView2).text = error.message
+            }
         }
 
         val buttonSub = view.findViewById<Button>(R.id.buttonSub)
         buttonSub.setOnClickListener {
-            val c = viewModel.minus()
-            view.findViewById<TextView>(R.id.textView2).text = c.toString()
+            try {
+                val c = viewModel.minus()
+                view.findViewById<TextView>(R.id.textView2).text = c.toString()
+            }catch(error: Exception) {
+                view.findViewById<TextView>(R.id.textView2).text = error.message
+            }
         }
 
         val button = view.findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            val d = viewModel.multiply()
-            view.findViewById<TextView>(R.id.textView2).text = d.toString()
+            try {
+                val d = viewModel.multiply()
+                view.findViewById<TextView>(R.id.textView2).text = d.toString()
+            }catch(error: Exception) {
+                view.findViewById<TextView>(R.id.textView2).text = error.message
+            }
         }
 
         val button2 = view.findViewById<Button>(R.id.button2)
