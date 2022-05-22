@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/naf_naf"
+    app:startDestination="@id/firstScreen">
+
+    <fragment
+        android:id="@+id/firstScreen"
+        android:name="com.nikolai.adepttestproject.firstscreen.FirstScreen"
+        android:label="FirstScreen" >
+        <action
+            android:id="@+id/action_firstScreen_to_canculatorFragment"
+            app:destination="@id/canculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/canculatorFragment"
+        android:name="com.nikolai.adepttestproject.canculator.CanculatorFragment"
+        android:label="CanculatorFragment" />
+</navigation>
